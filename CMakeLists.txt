@@ -11,9 +11,9 @@ set( CMAKE_MODULE_PATH ${CMAKE_MODULE_PATH} "${CMAKE_SOURCE_DIR}/cmake/Modules/"
 #find OCE or OpenCASCADE
 set( CASCADE_LIBS TKernel )
 if( UNIX )
-  set( OCE_DIR "/usr/local/share/cmake/" )
+  set( OCE_DIR "/usr/local/share/cmake/" CACHE PATH "Path to OCE")
 else()
-  set( OCE_DIR "c:/OCE-0.3.0/share/cmake" )
+  set( OCE_DIR "c:/OCE-0.3.0/share/cmake" CACHE PATH "Path to OCE")
 endif()
 find_package ( OCE )
 if( ${OCE_FOUND} )
@@ -30,8 +30,8 @@ find_package( libarea REQUIRED )
 
 if( APPLE )
   # Apple includes two different openGL implementations, for Carbon and X11.  We want X11
-  set( OSX_INCLUDE_DIRS /usr/X11R6/include )
-  set( OSX_LIBS -L/usr/X11R6/lib -lGL -lX11 -lGLU -lglut )
+  set( OSX_INCLUDE_DIRS "/usr/X11/include" )
+  set( OSX_LIBS -L/usr/X11/lib -lGL -lX11 -lGLU -lglut )
 endif( APPLE )
 
 include(${wxWidgets_USE_FILE})
