@@ -11,7 +11,7 @@ set( CMAKE_MODULE_PATH ${CMAKE_MODULE_PATH} "${CMAKE_SOURCE_DIR}/cmake/Modules/"
 #find OCE or OpenCASCADE
 set( CASCADE_LIBS TKernel )
 if( UNIX )
-  set( OCE_DIR "/usr/local/share/cmake/" CACHE PATH "Path to OCE")
+  set( OCE_DIR "/usr/local/Cellar/oce/0.17.2_1/OCE.framework/Versions/0.17/Resources/" CACHE PATH "Path to OCE")
 else()
   set( OCE_DIR "c:/OCE-0.3.0/share/cmake" CACHE PATH "Path to OCE")
 endif()
